@@ -2,6 +2,7 @@ const express=require('express');
 const port=3000;
 const app=express();
 const bookRouter=require('./routes/book.js');
+const userRouter=require('./routes/user.js');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -15,6 +16,7 @@ app.get('/',function(request,response){
 });
 
 app.use('/book', bookRouter);
+app.use('/user', userRouter);
 
 
 module.exports=app;

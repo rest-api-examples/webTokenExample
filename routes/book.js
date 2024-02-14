@@ -47,12 +47,13 @@ router.put('/:id',function(request, response){
         }
         else {
             console.log(result.affectedRows);
-            if(result.affectedRows==1){
+            response.json(result.affectedRows);
+            /*if(result.affectedRows==1){
                 response.send(1)
             }
             else {
                 response.send(0);
-            }
+            }*/
         }
     });
 });
