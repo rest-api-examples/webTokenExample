@@ -3,6 +3,7 @@ const port=3000;
 const app=express();
 const bookRouter=require('./routes/book.js');
 const userRouter=require('./routes/user.js');
+const loginRouter=require('./routes/login.js');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -17,6 +18,7 @@ app.get('/',function(request,response){
 
 app.use('/book', bookRouter);
 app.use('/user', userRouter);
+app.use('/login', loginRouter);
 
 
 module.exports=app;
