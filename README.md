@@ -41,6 +41,7 @@ Tässä esimerkissä käytetään <b>asynkroonista hash metodia</b>.
 <li>Kirjoita login-controlleri, joka lähettää responsena true tai false</li>
 <li>Muokkaa login-controlleria, niin että onnistuneen kirjautumisen seurauksena se palauttaakin webtokenin.
 Webtokenin generoinnista löytyy ohjeet sivulta: https://peatutor.com/express/Examples/webtoken.php</li>
+<li>Suojaa reitit book ja user webtoken autentikoinnilla</li>
 </ol>
 
 ## Huomioita sovelluksesta
