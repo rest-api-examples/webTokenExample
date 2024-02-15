@@ -39,7 +39,8 @@ Tässä esimerkissä käytetään <b>asynkroonista hash metodia</b>.
 <li>Kirjoita em. tiedostoihin tarvittavat koodit</li>
 <li>Kryptaa modelissa salasana ennen sen viemistä tietokantaan</li>
 <li>Kirjoita login-controlleri, joka lähettää responsena true tai false</li>
-<li>Muokkaa login-controlleria, niin että onnistuneen kirjautumisen seurauksena se palauttaakin webtokenin</li>
+<li>Muokkaa login-controlleria, niin että onnistuneen kirjautumisen seurauksena se palauttaakin webtokenin.
+Webtokenin generoinnista löytyy ohjeet sivulta: https://peatutor.com/express/Examples/webtoken.php</li>
 </ol>
 
 ## Huomioita sovelluksesta
