@@ -38,4 +38,12 @@ Tässä esimerkissä käytetään <b>asynkroonista hash metodia</b>.
 <li>Luo tiedostot routes/user.js ja models/user_model.js</li>
 <li>Kirjoita em. tiedostoihin tarvittavat koodit</li>
 <li>Kryptaa modelissa salasana ennen sen viemistä tietokantaan</li>
+<li>Kirjoita login-controlleri, joka lähettää responsena true tai false</li>
+<li>Muokkaa login-controlleria, niin että onnistuneen kirjautumisen seurauksena se palauttaakin webtokenin</li>
 </ol>
+
+## Huomioita sovelluksesta
+
+Tiedostossa app.js lause <b>const app=express();</b> luo Express-sovelluksen instanssin, joka edustaa koko sovellusta.
+
+Kaikissa kontrollereissa eli routes kansion tiedostoissa lause <b>const router=express.Router();</b> luo reititin-olion, joka edustaa osaa sovelluksen reiteistä ja middlewareista, mikä on hyödyllistä koodin modulaarisuuden kannalta.
