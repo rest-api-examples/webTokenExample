@@ -17,6 +17,9 @@ const book={
     },
     deleteBook(id, callback){
         return db.query('DELETE FROM book WHERE id_book=?',[id], callback);
+    },
+    getBooksByAuthors(callback){
+        return db.query('SELECT author, GROUP_CONCAT(name) as books FROM book GROUP BY author',callback);
     }
 }
 

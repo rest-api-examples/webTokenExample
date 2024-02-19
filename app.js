@@ -1,9 +1,14 @@
 const express=require('express');
 const port=3000;
 const app=express();
+
 const bookRouter=require('./routes/book.js');
 const userRouter=require('./routes/user.js');
 const loginRouter=require('./routes/login.js');
+const borrowRouter=require('./routes/borrow.js');
+const bookAuthorRouter=require('./routes/bookauthor.js');
+
+
 const jwt=require('jsonwebtoken');
 const dotenv=require('dotenv');
 dotenv.config();
@@ -21,6 +26,8 @@ app.get('/',function(request,response){
 
 //suojaamattomat reitit
 app.use('/login', loginRouter);
+app.use('/borrow',borrowRouter);
+app.use('/bookauthor',bookAuthorRouter);
 
 //suojatut reitit
 app.use(authenticateToken);
