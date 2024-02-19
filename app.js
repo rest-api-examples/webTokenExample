@@ -18,14 +18,14 @@ app.listen(port, function(){
 app.get('/',function(request,response){
     response.send("Nodemon testi Express API esimerkki ilman tietokantaa portissa "+port);
 });
-app.use('/login', loginRouter);
 
 //suojaamattomat reitit
-app.use('/book', bookRouter);
+app.use('/login', loginRouter);
 
 //suojatut reitit
 app.use(authenticateToken);
 app.use('/user', userRouter);
+app.use('/book', bookRouter);
 
 
 function authenticateToken(req, res, next) {
