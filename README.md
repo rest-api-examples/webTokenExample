@@ -49,3 +49,7 @@ Webtokenin generoinnista löytyy ohjeet sivulta: https://peatutor.com/express/Ex
 Tiedostossa app.js lause <b>const app=express();</b> luo Express-sovelluksen instanssin, joka edustaa koko sovellusta.
 
 Kaikissa kontrollereissa eli routes kansion tiedostoissa lause <b>const router=express.Router();</b> luo reititin-olion, joka edustaa osaa sovelluksen reiteistä ja middlewareista, mikä on hyödyllistä koodin modulaarisuuden kannalta.
+
+## Secret key
+
+Tokenin generoinnissa tarvitaan Secret Key. Jotta sovellus toimii generoi se ajamalla komento node generate_token ja kopio saatu string .env tiedostoon jonka malli on tiedostossa .env_example.

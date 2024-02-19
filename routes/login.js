@@ -2,8 +2,12 @@ const express = require('express');
 const router = express.Router();
 const user = require('../models/user_model');
 const bcrypt = require('bcryptjs');
+const dotenv=require('dotenv');
+dotenv.config();
+const jwt=require('jsonwebtoken');
 
 router.post('/', function (request, response) {
+    console.log(process.env.MY_SQL);
     //console.log(request.body);
     user.login(request.body.username, function (err, result) {
         if (request.body.username && request.body.password) {
@@ -18,7 +22,8 @@ router.post('/', function (request, response) {
 
                     if(compareResult){
                         console.log("Kirjautuminen ok");
-                        response.send(true);
+                        const token=generateAccessToken({username: request.body.username})
+                        response.send(token);
                     }
                     else{
                         console.log("Väärä salasana");
@@ -38,5 +43,10 @@ router.post('/', function (request, response) {
         }
     });
 });
+
+function generateAccessToken(username) {
+    dotenv.config();
+    return jwt.sign(username, process.env.MY_TOKEN, { expiresIn: '40s' });
+  }
 
 module.exports = router;
